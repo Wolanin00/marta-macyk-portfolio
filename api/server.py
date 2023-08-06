@@ -9,7 +9,7 @@ def index():
 
 @app.route("/project-1")
 def open_projektowanie_wstepne_architektoniczno_urbanistyczne_ii():
-    return send_file(path_or_file='static/file/Projektowanie-wstepne-architektoniczno-urbanistyczne-II-compressed-1.pdf', as_attachment=False)
+    return send_file(path_or_file='static/file/Projektowanie-wstepne-architektoniczno-urbanistyczne-II-compressed.pdf', as_attachment=False)
 
 
 if __name__ == "__main__":
