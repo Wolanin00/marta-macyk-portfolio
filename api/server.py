@@ -1,6 +1,6 @@
-import os.path
+import os.path, json
 
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template, send_file, send_from_directory
 
 app = Flask(__name__)
 
@@ -17,7 +17,10 @@ def open_projektowanie_wstepne_architektoniczno_urbanistyczne_ii():
 
 @app.route('/test')
 def test():
-    return send_file(path_or_file=os.path.join(os.path.dirname(__file__), "static/files/test.pdf"), as_attachment=False)
+    workingdir = os.path.abspath(os.getcwd())
+    filepath = workingdir + '/static/files/'
+    return send_from_directory(filepath, 'test.pdf')
+    # return send_file(path_or_file="./static/files/test.pdf", as_attachment=False)
 
 
 if __name__ == "__main__":
