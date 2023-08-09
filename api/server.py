@@ -19,7 +19,7 @@ def open_projektowanie_wstepne_architektoniczno_urbanistyczne_ii():
 def test():
     workingdir = os.path.abspath(os.getcwd())
     filepath = workingdir + '/static/files/'
-    return send_from_directory(filepath, 'test.pdf')
+    return send_from_directory(filepath, 'test.pdf', as_attachment=False)
     # return send_file(path_or_file="./static/files/test.pdf", as_attachment=False)
 
 
