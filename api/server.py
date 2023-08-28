@@ -1,4 +1,5 @@
 import os.path, json
+import wget
 
 from flask import Flask, render_template, send_file, send_from_directory
 
@@ -12,7 +13,9 @@ def index():
 
 @app.route("/project-1")
 def open_projektowanie_wstepne_architektoniczno_urbanistyczne_ii():
-    return send_file(path_or_file='./static/files/Projektowanie-wstepne-architektoniczno-urbanistyczne-II-compressed.pdf', as_attachment=False)
+    url = 'https://github.com/Wolanin00/marta-macyk-portfolio/blob/main/api/static/files/Projektowanie-wstepne-architektoniczno-urbanistyczne-II-compressed.pdf'
+    filename = wget.download(url)
+    return render_template('index.html')
 
 
 @app.route('/test')
