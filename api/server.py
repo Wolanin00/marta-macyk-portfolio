@@ -1,5 +1,4 @@
 import os.path, json
-import wget
 
 from flask import Flask, render_template, send_file, send_from_directory
 
